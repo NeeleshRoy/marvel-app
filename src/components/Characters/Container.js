@@ -15,7 +15,7 @@ class CharacterContainer extends Component {
   componentDidMount() {
     const that = this;
     var charactersGridApi = 
-    `${ constants.api.host }${constants.api.characters}?apikey=${constants.api.apiKey}&limit=40&orderBy=modified`
+    `${ constants.api.host }${constants.api.characters}?apikey=${constants.api.apiKey}&limit=40&orderBy=-modified`
     fetch(charactersGridApi)
     .then(response => {
       return response.json()
