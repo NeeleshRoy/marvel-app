@@ -55,8 +55,11 @@
 
 .card__content {
   color: #000000;
+  font-family: 'Acre', Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  padding: 2px 0px;
 }
 
 .card:hover { 
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
