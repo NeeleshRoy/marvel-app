@@ -49,3 +49,34 @@ table {
   url("./static/fonts/bebas.ttf") format("truetype"),
   url("./static/fonts/bebas.eot") format("svg");
 }
+
+@font-face {
+  font-family: "Acre";
+  src: url("./static/fonts/acre.eot");
+  src: 
+	url("./static/fonts/acre.woff") format("woff"),
+	url("./static/fonts/acre.woff2") format("woff2"),
+  url("./static/fonts/acre.ttf") format("truetype"),
+  url("./static/fonts/acre.eot") format("svg");
+}
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+
+.clearfix {
+	display: inline-block;
+}
+
+html[xmlns] .clearfix {
+	display: block;
+}
+
+* html .clearfix {
+	height: 1%;
+}
