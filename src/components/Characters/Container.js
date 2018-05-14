@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import CharacterGrid from './Presentation'
+import { CharacterGrid } from './Presentation'
 import constants from '../constants'
 
 class CharacterContainer extends Component {
