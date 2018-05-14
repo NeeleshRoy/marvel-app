@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const CharacterGrid = ({ characters }) => (
+export const CharacterGrid = ({ characters }) => (
   <div className="container-fluid clearfix">
     { 
       characters.map((element, index) => {
@@ -25,5 +25,3 @@ const CharacterGrid = ({ characters }) => (
 CharacterGrid.propTypes = {
   characters: PropTypes.array.isRequired
 };
-
-export default CharacterGrid;
