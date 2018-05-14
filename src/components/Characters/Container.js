@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { CharacterGrid } from './Presentation';
+import Search from './Filter';
 import Loader from '../Utils/Loader';
 import constants from '../constants';
 
@@ -13,7 +14,7 @@ class CharacterContainer extends Component {
 			search: ''
 		};
 
-		this.handleKeyPress = this.handleKeyPress.bind(this);
+		this.handleChange = this.handleChange.bind(this);
 		this.searchResults = this.searchResults.bind(this);
 	}
 
@@ -30,10 +31,12 @@ class CharacterContainer extends Component {
 			});
 	}
 
-	searchResults = () => {
+	searchResults = (searched) => {
 		const that = this;
 		const charactersSearchApi = `${constants.api.host}${constants.api.characters}?apikey=${constants.api
-			.apiKey}&limit=40&orderBy=-modified&nameStartsWith=${that.state.search}`;
+			.apiKey}&limit=40&orderBy=-modified&nameStartsWith=${searched}`;
+
+		that.setState({ loading: true });
 		fetch(charactersSearchApi)
 			.then((response) => {
 				return response.json();
@@ -43,12 +46,10 @@ class CharacterContainer extends Component {
 			});
 	};
 
-	handleKeyPress = (event) => {
-		const that = this;
-		if (event.keyCode === 13) {
+	handleChange = (event) => {
+		if (event.key === 'Enter') {
 			event.preventDefault();
-			that.setState({ loading: true, search: event.target.value });
-			that.searchResults();
+			this.searchResults(event.target.value);
 		}
 	};
 
@@ -59,6 +60,7 @@ class CharacterContainer extends Component {
 			const results = this.state.data.data.results;
 			return (
 				<React.Fragment>
+					<Search placeholder="Search character by name" handleChange={this.handleChange} />
 					<CharacterGrid characters={results} />
 				</React.Fragment>
 			);
