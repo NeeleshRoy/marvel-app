@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { CharacterGrid } from './Presentation'
+import Loader from '../Utils/Loader'
 import constants from '../constants'
 
 class CharacterContainer extends Component {
@@ -27,7 +28,7 @@ class CharacterContainer extends Component {
 
   render() {
     if (this.state.loading) {
-      return(<p>Loading</p>)
+      return(<Loader />)
     } else {
       const results = this.state.data.data.results
       return (
