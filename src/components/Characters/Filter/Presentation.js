@@ -2,11 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const SearchUi = ({ placeholder, handleChange }) => {
-	return (
-		<form>
-			<input type="search" placeholder={placeholder} onKeyPress={handleChange} />
-		</form>
-	);
+	return <input className="search" type="search" placeholder={placeholder} onKeyPress={handleChange} />;
 };
 
 SearchUi.propTypes = {
