@@ -85,6 +85,7 @@ video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+	text-decoration: none;
 }
 /* HTML5 display-role reset for older browsers */
 article,
@@ -123,6 +124,21 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+h1 {
+	font-family: 'bebas', sans-serif;
+	color: #efefef;
+	font-size: 20px;
+	padding: 15px 10px;
+}
+
+p {
+	font-family: Acre;
+	color: #efefef;
+	padding: 10px;
+	font-size: 14px;
+}
+
 @font-face {
 	font-family: "Bebas";
 	src: url("./static/fonts/bebas.eot");
