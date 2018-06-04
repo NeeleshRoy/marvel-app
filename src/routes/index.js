@@ -1,20 +1,13 @@
-import React from 'react'
-import { CounterContainer } from 'containers'
-import { Header } from 'components'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
-import styled from 'styled-components'
-
-const Container = styled.div`text-align: center;`
+import React from 'react';
+import { Home } from 'containers';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 function Routes() {
-  return (
-    <Router>
-      <Container>
-        <Header />
-        <Route path="/" component={CounterContainer} />
-      </Container>
-    </Router>
-  )
+	return (
+		<Router>
+			<Route path="/" component={Home} />
+		</Router>
+	);
 }
 
-export default Routes
+export default Routes;
