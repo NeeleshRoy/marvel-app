@@ -40,10 +40,22 @@
 		"webpack-manifest-plugin": "1.3.2",
 		"whatwg-fetch": "2.0.3"
 	},
+	"lint-staged": {
+		"*.{js,jsx}": [ "eslint --fix", "git add" ],
+		"*.{json,md,scss}": [ "prettier --write", "git add" ]
+	},
 	"scripts": {
+		"precommit": "lint-staged",
 		"start": "node scripts/start.js",
 		"build": "node scripts/build.js",
-		"test": "node scripts/test.js --env=jsdom"
+		"test": "node scripts/test.js --env=jsdom",
+		"fix:other": "yarn prettier --write",
+		"fix:js": "yarn test:js --fix",
+		"fix": "yarn fix:js && yarn fix:other",
+		"prettier": "prettier \"**/*.{json,md,scss}\"",
+		"test:other": "yarn prettier --list-different",
+		"test:js": "eslint --ignore-path .gitignore --ignore-path .prettierignore \"**/*.{js,jsx}\"",
+		"lint": "yarn test:other && yarn test:js"
 	},
 	"jest": {
 		"collectCoverageFrom": [ "src/**/*.{js,jsx,mjs}" ],
