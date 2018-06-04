@@ -1,25 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Home } from 'components';
-import { createStructuredSelector, createSelector } from 'reselect';
-
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as homeActions from 'actions/home';
+import { createStructuredSelector, createSelector } from 'reselect';
 
-class HomeContainer extends React.Component {
-	static propTypes = {
-		greet: PropTypes.func,
-		message: PropTypes.string
-	};
+import { Home } from '../components';
+import * as homeActions from '../actions/home';
 
-	render() {
-		return <Home greet={this.props.greet} message={this.props.message} />;
-	}
-}
+const propTypes = {
+	greet: PropTypes.func.isRequired,
+	message: PropTypes.string.isRequired,
+};
+
+const HomeContainer = (props) => (
+	<React.Fragment>
+		<Home greet={props.greet} message={props.message} />
+	</React.Fragment>
+);
+
+HomeContainer.propTypes = propTypes;
 
 const mapStateToProps = createStructuredSelector({
-	message: createSelector((state) => state.home.message, (message) => message)
+	message: createSelector((state) => state.home.message, (message) => message),
 });
 
 function mapDispatchToProps(dispatch) {

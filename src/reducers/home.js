@@ -1,7 +1,7 @@
-import { GREET } from 'constants/ActionTypes';
+import { GREET } from '../constants/ActionTypes';
 
 const initialState = {
-	message: ''
+	message: '',
 };
 
 export default function home(state = initialState, action) {
