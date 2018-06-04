@@ -41,8 +41,7 @@
 		"whatwg-fetch": "2.0.3"
 	},
 	"lint-staged": {
-		"*.{js,jsx}": [ "eslint --fix", "git add" ],
-		"*.{json,md,scss}": [ "prettier --write", "git add" ]
+		"*.{js,jsx}": [ "eslint --fix", "git add" ]
 	},
 	"scripts": {
 		"precommit": "lint-staged",
