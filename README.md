@@ -1,5 +1,5 @@
 # Marvel App
-
+WIP - An app for hardcore marvel fans. Search, sort, filter the characters, comics, episodes and stories
 ### `npm start` or `yarn start`
 
 Runs the app in development mode.<br>
