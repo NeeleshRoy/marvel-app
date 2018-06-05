@@ -1,10 +1,9 @@
 import axios from 'axios';
 import { createAction } from 'redux-actions';
-import { GREET, HOME_INIT } from '../constants/ActionTypes';
+import { CHARACTER_INIT } from '../constants/ActionTypes';
 import apiDetails from '../constants/Api';
 
-export const greet = createAction(GREET, (event) => event.target.value);
-export const init = createAction(HOME_INIT);
+export const init = createAction(CHARACTER_INIT);
 
 export function getCharacters() {
 	const { host, apiKey, characters } = apiDetails.api;

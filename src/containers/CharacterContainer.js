@@ -4,13 +4,23 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createStructuredSelector, createSelector } from 'reselect';
 
-import { Home } from '../components';
-import * as homeActions from '../actions/home';
+import { Characters } from '../components';
+import * as CharacterActions from '../actions/characters';
+
+const defaultProps = {
+	characters: {},
+};
 
 const propTypes = {
-	greet: PropTypes.func.isRequired,
-	message: PropTypes.string.isRequired,
 	getCharacters: PropTypes.func.isRequired,
+	characters: PropTypes.shape({
+		data: PropTypes.shape({
+			count: PropTypes.number,
+			limit: PropTypes.number,
+			offset: PropTypes.number,
+			results: PropTypes.array,
+		}),
+	}),
 };
 
 class HomeContainer extends React.Component {
@@ -21,21 +31,21 @@ class HomeContainer extends React.Component {
 	render() {
 		return (
 			<React.Fragment>
-				<Home greet={this.props.greet} message={this.props.message} />
+				<Characters characterData={this.props.characters} />
 			</React.Fragment>
 		);
 	}
 }
 
 HomeContainer.propTypes = propTypes;
+HomeContainer.defaultProps = defaultProps;
 
 const mapStateToProps = createStructuredSelector({
-	message: createSelector((state) => state.home.message, (message) => message),
-	characters: createSelector((state) => state.home.characters, (characters) => characters),
+	characters: createSelector((state) => state.characters.characters.data, (characters) => characters),
 });
 
 function mapDispatchToProps(dispatch) {
-	return bindActionCreators(homeActions, dispatch);
+	return bindActionCreators(CharacterActions, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomeContainer);
