@@ -44,6 +44,7 @@ export const Content = styled.div`
 
 export const Card = styled.div`
 	height: 250px;
+	border: 1px solid grey
 	background: url(${(props) => props.src}) 0 0 no-repeat;
 	background-size: cover;
 	-webkit-box-shadow: 3px 3px 0px 0px rgba(190, 190, 190, 1);
@@ -54,14 +55,13 @@ export const Card = styled.div`
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 
-	transition: all .2s ease-in-out;
+	transition: all .3s ease-in-out;
 
 	&:hover {
 		border: 4px solid #000;
 		-webkit-box-shadow: 3px 3px 5px 0px rgba(70, 70, 70, 1);
 		-moz-box-shadow: 3px 3px 5px 0px rgba(70, 70, 70, 1);
 		box-shadow: 3px 3px 5px 0px rgba(70, 70, 70, 1);
-		transform: scale(1.1);
 	}
 
 	&:hover ${Content} {

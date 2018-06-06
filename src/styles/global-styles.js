@@ -13,4 +13,9 @@ injectGlobal`
     padding: 0;
     font-family: 'Cabin', sans-serif;
   }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 `;
