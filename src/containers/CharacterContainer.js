@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { createStructuredSelector, createSelector } from 'reselect';
+import { createStructuredSelector } from 'reselect';
 
 import { Characters } from '../components';
 import * as CharacterActions from '../actions/characters';
@@ -40,8 +40,12 @@ class HomeContainer extends React.Component {
 HomeContainer.propTypes = propTypes;
 HomeContainer.defaultProps = defaultProps;
 
+const charactersSelector = (state) => state.characters.characters.data;
+const offsetSelector = (state) => state.characters.offset;
+
 const mapStateToProps = createStructuredSelector({
-	characters: createSelector((state) => state.characters.characters.data, (characters) => characters),
+	characters: charactersSelector,
+	offset: offsetSelector,
 });
 
 function mapDispatchToProps(dispatch) {

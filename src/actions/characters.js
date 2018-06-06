@@ -7,9 +7,10 @@ export const init = createAction(CHARACTER_INIT);
 
 export function getCharacters() {
 	const { host, apiKey, characters } = apiDetails.api;
-	const url = `${host}${characters}?apikey=${apiKey}`;
 
-	return (dispatch) => {
+	return (dispatch, getState) => {
+		const { offset } = getState().characters;
+		const url = `${host}${characters}?apikey=${apiKey}&orderBy=-modified&offset=${offset}&limit=10`;
 		axios.get(url).then((response) => dispatch(init(response.data)));
 	};
 }
