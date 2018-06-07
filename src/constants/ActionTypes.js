@@ -1,1 +1,2 @@
-export const GREET = 'HOME_GREETER';
+export const CHARACTER_INIT = 'CHARACTER_INIT';
+export const SINGLE_CHARACTER = 'SINGLE_CHARACTER';

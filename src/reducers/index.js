@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
-import home from './home';
+import characters from './characters';
+import single from './single';
 
 const rootReducer = combineReducers({
-	home
+	characters,
+	single,
 });
 
 export default rootReducer;

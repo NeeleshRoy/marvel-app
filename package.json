@@ -4,6 +4,8 @@
   "version": "0.1.0",
   "author": "Neelesh Roy",
   "dependencies": {
+    "@material-ui/core": "^1.2.0",
+    "axios": "^0.18.0",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
