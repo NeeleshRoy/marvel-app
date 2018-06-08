@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import { CharacterContainer, SingleContainer } from '../containers';
-import { Header } from '../components/hoc';
+import { Header, Footer } from '../components/hoc';
 
 function Routes() {
 	return (
@@ -14,6 +14,7 @@ function Routes() {
 						<Route path="/characters" exact component={CharacterContainer} />
 						<Route path="/characters/:id" component={SingleContainer} />
 					</Switch>
+					<Footer />
 				</React.Fragment>
 			</Router>
 		</React.Fragment>
