@@ -11,11 +11,16 @@ injectGlobal`
   body {
     margin: 0;
     padding: 0;
-    font-family: 'Cabin', sans-serif;
+    font-family: 'Montserrat', sans-serif;
   }
 
   a {
     text-decoration: none;
     color: inherit;
+  }
+
+  nav ul {
+    display: flex;
+    margin: 30px 0 0 0;
   }
 `;
