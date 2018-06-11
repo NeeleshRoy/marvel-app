@@ -25,7 +25,10 @@ const propTypes = {
 
 class HomeContainer extends React.Component {
 	componentWillMount() {
-		this.props.getCharacters();
+		if (!window.characterLoaded) {
+			this.props.getCharacters();
+			window.characterLoaded = true;
+		}
 	}
 
 	render() {
