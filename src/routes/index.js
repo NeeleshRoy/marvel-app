@@ -15,8 +15,8 @@ function Routes() {
 							<Route path="/characters" exact component={CharacterContainer} />
 							<Route path="/characters/:id" component={SingleContainer} />
 						</Switch>
-						<Footer />
 					</div>
+					<Footer />
 				</React.Fragment>
 			</Router>
 		</React.Fragment>
