@@ -10,10 +10,12 @@ function Routes() {
 			<Router>
 				<React.Fragment>
 					<Header />
-					<Switch>
-						<Route path="/characters" exact component={CharacterContainer} />
-						<Route path="/characters/:id" component={SingleContainer} />
-					</Switch>
+					<div className="container">
+						<Switch>
+							<Route path="/characters" exact component={CharacterContainer} />
+							<Route path="/characters/:id" component={SingleContainer} />
+						</Switch>
+					</div>
 					<Footer />
 				</React.Fragment>
 			</Router>

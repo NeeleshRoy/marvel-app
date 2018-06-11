@@ -1,6 +1,6 @@
 import React from 'react';
 import { header } from '../../constants/static';
-import { MarvelHeader, Logo, NavItems } from '../../styles/header.styles';
+import { MarvelHeader, NavItems } from '../../styles/header.styles';
 
 const getNavItems = () =>
 	header.nav.map((item) => (
@@ -12,7 +12,7 @@ const getNavItems = () =>
 export default function Header() {
 	return (
 		<MarvelHeader>
-			<Logo>MARVEL FANS</Logo>
+			<img src="/images/Logo.jpg" alt="Logo" className="logo" />
 			<nav>
 				<ul>{getNavItems()}</ul>
 			</nav>

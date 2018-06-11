@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 
-import { Container, Card, CardContent, Content } from '../styles/characters';
+import { Container, Card, CardContent, Content, CardInfoStyles } from '../styles/characters';
 
 const defaultProps = {
 	characterData: {
@@ -27,9 +26,10 @@ const propTypes = {
 const renderCharactersMap = (characters) => (
 	<Container>
 		{characters.results.map((char) => (
-			<Link to={`/characters/${char.id}`} key={char.id}>
-				<Card src={`${char.thumbnail.path}.${char.thumbnail.extension}`}>
-					<CardContent>
+			<Card to={`/characters/${char.id}`} key={char.id}>
+				<CardContent>
+					<img src={`${char.thumbnail.path}.${char.thumbnail.extension}`} alt={char.name} />
+					<CardInfoStyles>
 						<Content variant="headline" component="h2">
 							{char.name}
 						</Content>
@@ -37,9 +37,9 @@ const renderCharactersMap = (characters) => (
 						<Content component="p">Comics : {char.comics.available}</Content>
 						<Content component="p">Series : {char.series.available}</Content>
 						<Content component="p">Stories : {char.stories.available}</Content>
-					</CardContent>
-				</Card>
-			</Link>
+					</CardInfoStyles>
+				</CardContent>
+			</Card>
 		))}
 	</Container>
 );

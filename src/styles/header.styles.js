@@ -2,28 +2,21 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const MarvelHeader = styled.header`
-	background: #000;
-	width: 100%;
-	max-height: 60px;
 	display: grid;
-	grid-template-columns: 4fr 1fr;
-	grid-gap: 20px;
-	align-content: center;
+	grid-template-columns: 2fr 2fr;
+	background: #000;
+	color: #fff;
 `;
-
-export const Logo = styled.h1`
-	margin-left: 20px;
-	color: #f2f2f2;
-`;
-
 export const NavItems = styled(Link)`
+  flex: 0;
   color: #fff;
-  margin-right: 25px;
-  text-transform: uppercase;
-  font-size: 16px;
+  font-size: 100%;
+  transition: all 0.3s
+  padding: 5px;
   font-weight: 900;
-  transition: color .2s;
-  &:hover{
-    color: crimson;
+  text-transform: uppercase;
+
+  &:hover {
+    background: red;
   }
 `;
