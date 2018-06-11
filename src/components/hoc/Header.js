@@ -12,7 +12,7 @@ const getNavItems = () =>
 export default function Header() {
 	return (
 		<MarvelHeader>
-			<Logo>MARVEL FANS</Logo>
+			<img src="/images/Logo.jpg" alt="Logo" className="logo" />
 			<nav>
 				<ul>{getNavItems()}</ul>
 			</nav>
