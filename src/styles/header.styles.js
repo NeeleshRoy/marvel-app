@@ -7,7 +7,6 @@ export const MarvelHeader = styled.header`
 	background: #000;
 	color: #fff;
 `;
-export const Logo = styled.img`width: 100%;`;
 export const NavItems = styled(Link)`
   flex: 0;
   color: #fff;

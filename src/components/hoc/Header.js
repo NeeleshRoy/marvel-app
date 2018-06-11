@@ -1,6 +1,6 @@
 import React from 'react';
 import { header } from '../../constants/static';
-import { MarvelHeader, Logo, NavItems } from '../../styles/header.styles';
+import { MarvelHeader, NavItems } from '../../styles/header.styles';
 
 const getNavItems = () =>
 	header.nav.map((item) => (
